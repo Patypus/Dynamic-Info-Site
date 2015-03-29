@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DynamicSite.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,23 @@ namespace DynamicSite.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult SimplePage()
+        {
+            var model = GetBasicTestModel();
+
+            return View(model);
+        }
+
+        private SimplePageModel GetBasicTestModel()
+        {
+            return new SimplePageModel
+            {
+                Title = "Test title",
+                Leader = "Lead paragraph",
+                Paragraphs = new List<string> { "para 1", "para 2" }
+            };
         }
     }
 }
