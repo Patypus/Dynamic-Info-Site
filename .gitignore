@@ -1,0 +1,8 @@
+*.suo
+*.user
+*.sln.docstates
+
+packages/*
+DynamicSite/bin/*
+DynamicSite/obj/*
+DynamicSite/fonts/*
