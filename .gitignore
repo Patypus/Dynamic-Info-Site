@@ -3,6 +3,8 @@
 *.sln.docstates
 
 packages/*
-DynamicSite/bin/*
-DynamicSite/obj/*
-DynamicSite/fonts/*
+DynamicSiteWebInterface/bin/*
+DynamicSiteWebInterface/obj/*
+DynamicSiteWebInterface/fonts/*
+DynamicSiteServer/bin/*
+DynamicSiteServer/obj/*
