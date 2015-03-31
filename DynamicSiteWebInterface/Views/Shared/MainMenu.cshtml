@@ -1,0 +1,12 @@
+﻿@model DynamicSite.Models.MenuModel
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        @{
+            foreach (var entry in Model.MenuEntries)
+            {
+                <li>@Html.ActionLink(entry.PageId, "SimplePage", "Home")</li>
+            }
+        }
+    </ul>
+</div>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DynamicSiteServer.Menu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,6 @@ namespace DynamicSite.Models
         /// <summary>
         /// Collection of menu model items which will be built into a strip menu.
         /// </summary>
-        public IList<MenuModel> MenuEntries { get; set; }
+        public IList<MenuEntry> MenuEntries { get; set; }
     }
 }

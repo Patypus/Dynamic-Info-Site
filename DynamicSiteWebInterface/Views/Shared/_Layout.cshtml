@@ -18,17 +18,14 @@
                 </button>
                 @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Test", "SimplePage", "Home")</li>
-                </ul>
+            <div id="MenuContainer">
+                @{
+                    Html.RenderAction("Menu", "MainMenu", null);
+                }
             </div>
         </div>
     </div>
-    <!--Html.RenderPartial-->
+    
     <div class="container body-content">
         @RenderBody()
         <hr />
