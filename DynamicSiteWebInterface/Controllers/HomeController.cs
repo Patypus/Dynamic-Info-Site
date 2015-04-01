@@ -25,18 +25,18 @@ namespace DynamicSite.Controllers
             return View();
         }
 
-        public ActionResult SimplePage()
+        public ActionResult SimplePage(string pageId)
         {
-            var model = GetBasicTestModel();
+            var model = GetBasicTestModel(pageId);
 
             return View(model);
         }
 
-        private SimplePageModel GetBasicTestModel()
+        private SimplePageModel GetBasicTestModel(string pageId)
         {
             return new SimplePageModel
             {
-                Title = "Test title",
+                Title = pageId,
                 Leader = "Lead paragraph",
                 Paragraphs = new List<string> { "para 1", "para 2" }
             };
