@@ -11,9 +11,16 @@ namespace DynamicSite.Controllers
             return View();
         }
 
-        public ActionResult SimplePage(string pageId)
+        public ActionResult SimplePage(string id)
         {
-            var model = GetBasicTestModel(pageId);
+            var model = GetBasicTestModel(id);
+
+            return View(model);
+        }
+
+        public ActionResult OtherPage(string id)
+        {
+            var model = GetBasicTestModel(id);
 
             return View(model);
         }

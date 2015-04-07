@@ -10,12 +10,15 @@ namespace DynamicSite
     public class RouteConfig
     {
         private static List<string> SimplePages = new List<string> { "Page1", "Page2", "Page3" };
+        private static List<string> OtherPages = new List<string> { "Page5" };
 
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            
+
+            AddOtherPageRoutes(routes);
             AddSmplePageRoutes(routes);
+            
 
             routes.MapRoute(name: "Default",
                             url: "{controller}/{action}/{id}",
@@ -28,8 +31,19 @@ namespace DynamicSite
             {
                 routes.MapRoute(
                     string.Join("_", "SimplePageRoute", page),
-                    "{id}",
+                    page,
                     new { controller = "Home", action = "SimplePage", id = page });
+            }
+        }
+
+        private static void AddOtherPageRoutes(RouteCollection routes)
+        {
+            foreach (var page in OtherPages)
+            {
+                routes.MapRoute(
+                    string.Join("_", "OtherPageRoute", page),
+                    page,
+                    new { controller = "Home", action = "OtherPage", id = page });
             }
         }
     }

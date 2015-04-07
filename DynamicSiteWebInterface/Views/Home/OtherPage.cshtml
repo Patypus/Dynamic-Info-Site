@@ -1,0 +1,13 @@
+﻿@model DynamicSite.Models.SimplePageModel
+
+<h1>@Model.Title</h1>
+
+<h2>Other page</h2>
+
+<p class="lead">@Model.Leader</P>
+
+@{foreach (var paragraph in Model.Paragraphs)
+  {
+      <p>@paragraph</p>
+  }
+}
