@@ -5,7 +5,7 @@
         @{
             foreach (var entry in Model.MenuEntries)
             {
-                <li>@Html.ActionLink(entry.PageId, "SimplePage", "Home", new { PageId = entry.PageId }, null)</li>
+                <li>@Html.ActionLink(entry.PageId, "SimplePage", "Home", new { id = entry.PageId }, null)</li>
             }
         }
     </ul>

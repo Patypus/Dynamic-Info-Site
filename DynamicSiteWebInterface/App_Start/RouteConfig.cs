@@ -15,13 +15,11 @@ namespace DynamicSite
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-
             AddSmplePageRoutes(routes);
+
+            routes.MapRoute(name: "Default",
+                            url: "{controller}/{action}/{id}",
+                            defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
 
         private static void AddSmplePageRoutes(RouteCollection routes)
@@ -31,8 +29,7 @@ namespace DynamicSite
                 routes.MapRoute(
                     string.Join("_", "SimplePageRoute", page),
                     "{id}",
-                    new { controller = "Home", action = "SimplePage", id = page }
-                    );
+                    new { controller = "Home", action = "SimplePage", id = page });
             }
         }
     }

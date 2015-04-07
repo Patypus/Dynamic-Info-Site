@@ -18,11 +18,11 @@ namespace DynamicSite.Controllers
             return View(model);
         }
 
-        private SimplePageModel GetBasicTestModel(string pageId)
+        private SimplePageModel GetBasicTestModel(string id)
         {
             return new SimplePageModel
             {
-                Title = pageId,
+                Title = id,
                 Leader = "Lead paragraph",
                 Paragraphs = new List<string> { "para 1", "para 2" }
             };
