@@ -6,9 +6,11 @@ namespace DynamicSite.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult MainPage()
         {
-            return View();
+            var model = GetBasicTestModel("MainPage");
+
+            return View("SimplePage", model);
         }
 
         public ActionResult SimplePage(string id)

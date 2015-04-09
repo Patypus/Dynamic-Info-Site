@@ -16,13 +16,13 @@ namespace DynamicSite
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            AddOtherPageRoutes(routes);
-            AddSmplePageRoutes(routes);
             
+            AddSmplePageRoutes(routes);
+            AddOtherPageRoutes(routes);
 
             routes.MapRoute(name: "Default",
                             url: "{controller}/{action}/{id}",
-                            defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+                            defaults: new { controller = "Home", action = "MainPage", id = UrlParameter.Optional });
         }
 
         private static void AddSmplePageRoutes(RouteCollection routes)
