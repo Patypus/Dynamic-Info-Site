@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facade\IServer.cs" />
+    <Compile Include="Facade\Server.cs" />
     <Compile Include="Menu\MenuEntry.cs" />
     <Compile Include="PageType\PageTypeEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

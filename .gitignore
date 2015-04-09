@@ -1,7 +1,7 @@
 *.suo
 *.user
 *.sln.docstates
-
+.nuget/*
 packages/*
 DynamicSiteWebInterface/bin/*
 DynamicSiteWebInterface/obj/*
