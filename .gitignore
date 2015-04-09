@@ -8,3 +8,5 @@ DynamicSiteWebInterface/obj/*
 DynamicSiteWebInterface/fonts/*
 DynamicSiteServer/bin/*
 DynamicSiteServer/obj/*
+DynamicSiteServerTests/bin/*
+DynamicSiteServerTests/obj/*
