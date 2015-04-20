@@ -41,7 +41,9 @@
   <ItemGroup>
     <Compile Include="Facade\IServer.cs" />
     <Compile Include="Facade\Server.cs" />
+    <Compile Include="Loader\ConfigLoader.cs" />
     <Compile Include="Menu\MenuEntry.cs" />
+    <Compile Include="Model\SiteConfig.cs" />
     <Compile Include="PageType\PageTypeEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
