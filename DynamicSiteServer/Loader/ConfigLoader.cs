@@ -5,14 +5,23 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace DynamicSiteServer.Loader
 {
     internal class ConfigLoader
     {
-        internal SiteConfig LoadConfig(Path configPath)
+        internal SiteConfig LoadConfig(string configPath)
         {
-            throw new NotImplementedException();
+            SiteConfig data;
+            var serialiser = new XmlSerializer(typeof(SiteConfig));
+            using (var reader = new StreamReader(configPath))
+            {
+                data = (SiteConfig) serialiser.Deserialize(reader);
+            }
+            
+            return data;
         }
     }
 }
