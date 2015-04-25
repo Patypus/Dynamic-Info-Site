@@ -12,8 +12,16 @@ using System.Xml.Serialization;
 
 namespace DynamicSiteServer.Loader
 {
+    /// <summary>
+    /// Class for loading site config files
+    /// </summary>
     internal class ConfigLoader
     {
+        /// <summary>
+        /// Loads an xml config file as a SiteConfig object from the provided path.
+        /// </summary>
+        /// <param name="configPath">Path to the config file to load</param>
+        /// <returns>SiteConfig object representing the details from the file at the provided path.</returns>
         internal SiteConfig LoadConfig(string configPath)
         {
             if (!File.Exists(configPath))

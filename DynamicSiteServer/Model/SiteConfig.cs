@@ -14,5 +14,7 @@ namespace DynamicSiteServer.Model
         public string SiteName;
 
         public string Author;
+
+        public string MasterPageListing;
     }
 }

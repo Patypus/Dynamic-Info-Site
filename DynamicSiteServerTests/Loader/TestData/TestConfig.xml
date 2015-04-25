@@ -2,4 +2,5 @@
 <SiteConfig>
   <SiteName>Site's Name</SiteName>
   <Author>Author's Name</Author>
+  <MasterPageListing>PageListingFile.xml</MasterPageListing>
 </SiteConfig>

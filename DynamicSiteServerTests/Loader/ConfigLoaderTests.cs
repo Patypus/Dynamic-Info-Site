@@ -29,17 +29,18 @@ namespace DynamicSiteServerTests.Loader
 
             Assert.AreEqual("Site's Name", loadedConfig.SiteName);
             Assert.AreEqual("Author's Name", loadedConfig.Author);
+            Assert.AreEqual("PageListingFile.xml", loadedConfig.MasterPageListing);
         }
 
         [Test, ExpectedException(typeof(FileNotFoundException))]
-        public void LoadConfigFile_ReturnsSensibleErrorWhenFileDoesNotExist()
+        public void LoadConfigFile_ThrowsFileNotFoundExceptionWhenFileDoesNotExist()
         {
             var pathToLoad = @"Z:/some/made/up/path.txt";
             _loader.LoadConfig(pathToLoad);
         }
 
         [Test, ExpectedException(typeof(MalformedConfigFileException))]
-        public void LoadConfigFile_ReturnsSensibleErrorWhenFileIsMalformed()
+        public void LoadConfigFile_ThrowsMalformedConfigFileExceptionWhenFileIsMalformed()
         {
             var pathToLoad = @"../../Loader/TestData/InvalidConfig.xml";
             _loader.LoadConfig(pathToLoad);

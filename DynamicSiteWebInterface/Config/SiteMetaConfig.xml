@@ -2,4 +2,5 @@
 <SiteConfig>
   <SiteName>Dynamic Site</SiteName>
   <Author>Pat Howell</Author>
+  <MasterPageListing></MasterPageListing>
 </SiteConfig>
