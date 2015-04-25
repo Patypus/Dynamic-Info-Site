@@ -55,6 +55,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Loader\TestData\InvalidConfig.xml" />
     <Content Include="Loader\TestData\TestConfig.xml" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,6 @@
-﻿using DynamicSiteServer.Model;
+﻿using DynamicSiteServer.Exceptions;
+using DynamicSiteServer.Model;
+using DynamicSiteServer.Resources;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,14 +16,29 @@ namespace DynamicSiteServer.Loader
     {
         internal SiteConfig LoadConfig(string configPath)
         {
-            SiteConfig data;
-            var serialiser = new XmlSerializer(typeof(SiteConfig));
-            using (var reader = new StreamReader(configPath))
+            if (!File.Exists(configPath))
             {
-                data = (SiteConfig) serialiser.Deserialize(reader);
+                throw new FileNotFoundException(string.Format(Strings.MetaConfigFileNotFoundAtPath, configPath));
             }
-            
-            return data;
+            return DeserialiseConfigFile(configPath);
+        }
+
+        private SiteConfig DeserialiseConfigFile(string configFilePath)
+        {
+            SiteConfig configData = null;
+            try
+            {
+                var serialiser = new XmlSerializer(typeof(SiteConfig));
+                using (var reader = new StreamReader(configFilePath))
+                {
+                    configData = (SiteConfig) serialiser.Deserialize(reader);
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                throw new MalformedConfigFileException(string.Format(Strings.UnableToLoadMetaConfigFile, configFilePath));
+            }
+            return configData;
         }
     }
 }
