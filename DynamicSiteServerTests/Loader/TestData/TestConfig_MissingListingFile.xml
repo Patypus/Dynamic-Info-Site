@@ -2,5 +2,5 @@
 <SiteConfig>
   <SiteName>Site's Name</SiteName>
   <Author>Author's Name</Author>
-  <MasterPageListing>../../Loader/TestData/PageListingFile.xml</MasterPageListing>
+  <MasterPageListing>ThisFileDoesNotExist.xml</MasterPageListing>
 </SiteConfig>

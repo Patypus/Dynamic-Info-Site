@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages>
+  <PageDetails>
+    <PageTitle>TitleOne</PageTitle>
+    <PageContentFile>SomeFilePath</PageContentFile>
+    <PageType>Simple</PageType>
+  </PageDetails>
+</Pages>
