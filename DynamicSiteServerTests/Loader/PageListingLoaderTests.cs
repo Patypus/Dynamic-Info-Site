@@ -1,4 +1,5 @@
 ﻿using DynamicSiteServer.Loader;
+using DynamicSiteServer.PageType;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,14 @@ namespace DynamicSiteServerTests.Loader
         [Test]
         public void LoadPageListing_SinglePageDetailsLoadedFromConfigFile()
         {
-            Assert.Fail();
+            var pathToLoad = @"../../Loader/TestData/SingleListing.xml";
+            var result = _loader.LoadPageListing(pathToLoad).ToList();
+
+            Assert.AreEqual(1, result.Count());
+            var singleItem = result.First();
+            Assert.AreEqual("TitleOne", singleItem.PageTitle);
+            Assert.AreEqual("SomeFilePath", singleItem.PageContentFile);
+            Assert.AreEqual(PageTypeEnum.Simple, singleItem.PageType);
         }
 
         [Test]

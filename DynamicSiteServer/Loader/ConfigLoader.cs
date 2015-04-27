@@ -28,7 +28,8 @@ namespace DynamicSiteServer.Loader
             {
                 throw new FileNotFoundException(string.Format(Strings.MetaConfigFileNotFoundAtPath, configPath));
             }
-            return DeserialiseConfigFile(configPath);
+            var deserialisedData = DeserialiseConfigFile(configPath);
+            return CheckPageListingFilePath(deserialisedData);
         }
 
         private SiteConfig DeserialiseConfigFile(string configFilePath)
@@ -47,6 +48,16 @@ namespace DynamicSiteServer.Loader
                 throw new MalformedConfigFileException(string.Format(Strings.UnableToLoadMetaConfigFile, configFilePath));
             }
             return configData;
+        }
+
+        private SiteConfig CheckPageListingFilePath(SiteConfig loadedConfig)
+        {
+            if (!File.Exists(loadedConfig.MasterPageListing))
+            {
+                var message = String.Format(Strings.MissingListingFileFromMetaConfig, loadedConfig.MasterPageListing);
+                throw new FileNotFoundException();
+            }
+            return loadedConfig;
         }
     }
 }

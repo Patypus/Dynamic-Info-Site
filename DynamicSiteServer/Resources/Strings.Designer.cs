@@ -70,6 +70,15 @@ namespace DynamicSiteServer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to locate the page listing file at the path &apos;{0}&apos;.
+        /// </summary>
+        internal static string MissingListingFileFromMetaConfig {
+            get {
+                return ResourceManager.GetString("MissingListingFileFromMetaConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to load the meta config file at &apos;{0}&apos; as the file is malformed..
         /// </summary>
         internal static string UnableToLoadMetaConfigFile {

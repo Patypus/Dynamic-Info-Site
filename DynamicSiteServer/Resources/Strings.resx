@@ -120,6 +120,9 @@
   <data name="MetaConfigFileNotFoundAtPath" xml:space="preserve">
     <value>Unable to find the meta config file at path '{0}'</value>
   </data>
+  <data name="MissingListingFileFromMetaConfig" xml:space="preserve">
+    <value>Unable to locate the page listing file at the path '{0}'</value>
+  </data>
   <data name="UnableToLoadMetaConfigFile" xml:space="preserve">
     <value>Unable to load the meta config file at '{0}' as the file is malformed.</value>
   </data>

@@ -29,7 +29,7 @@ namespace DynamicSiteServerTests.Loader
 
             Assert.AreEqual("Site's Name", loadedConfig.SiteName);
             Assert.AreEqual("Author's Name", loadedConfig.Author);
-            Assert.AreEqual("PageListingFile.xml", loadedConfig.MasterPageListing);
+            Assert.AreEqual(@"../../Loader/TestData/PageListingFile.xml", loadedConfig.MasterPageListing);
         }
 
         [Test, ExpectedException(typeof(FileNotFoundException))]
@@ -37,6 +37,13 @@ namespace DynamicSiteServerTests.Loader
         {
             var pathToLoad = @"Z:/some/made/up/path.txt";
             _loader.LoadConfig(pathToLoad);
+        }
+
+        [Test, ExpectedException(typeof(FileNotFoundException))]
+        public void LoadConfigFile_ThrowsFileNotFoundExceptionWhenListingFileInConfigDoesNotExist()
+        {
+            var pathToLoad = @"../../Loader/TestData/TestConfig_MissingListingFile.xml";
+            var loadedConfig = _loader.LoadConfig(pathToLoad);
         }
 
         [Test, ExpectedException(typeof(MalformedConfigFileException))]

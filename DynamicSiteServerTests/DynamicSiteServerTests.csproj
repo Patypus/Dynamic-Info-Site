@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Facade\ServerTests.cs" />
     <Compile Include="Loader\ConfigLoaderTests.cs" />
+    <Compile Include="Loader\PageListingLoaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Loader\TestData\InvalidConfig.xml" />
+    <Content Include="Loader\TestData\PageListingFile.xml" />
+    <Content Include="Loader\TestData\SingleListing.xml" />
+    <Content Include="Loader\TestData\TestConfig_MissingListingFile.xml" />
     <Content Include="Loader\TestData\TestConfig.xml" />
   </ItemGroup>
   <ItemGroup>
